@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Selection</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+    <div id="overlay" class="overlay">
+
+<div class="emoji-container" id="emojiContainer"></div>
+
+    <div class="emotion-card" id="emotionCard">
+
+    <span class="close-card" id="closeCard">
+        <i class="fa-solid fa-xmark"></i>
+    </span>
+
+    <h2 id="cardTitle"></h2>
+
+    <p id="cardMessage"></p>
+
+    <button id="chatBtn">
+        💬 Start Talking
+    </button>
+
+</div>
+
+</div>
+
+    <div class="mood-screen">
+
+    <div class="mood-top-bar">
+
+        <h2 class="app-title">GenAI</h2>
+
+        <div class="top-icons">
+            <i class="fa-solid fa-circle-info" id="aboutBtn"></i>
+            <i class="fa-solid fa-gear" id="settingsBtn"></i>
+        </div>
+
+    </div>
+
+        <h2>How are you feeling today?</h2>
+
+        <p class="mood-subtitle">
+            Choose the emotion that best describes your mood.
+        </p>
+
+        <div class="mood-container">
+
+            <div class="mood-card">
+                <span class="emoji">😊</span>
+                <div>
+                    <h3>Happy</h3>
+                    <p>Feeling positive and energetic.</p>
+                </div>
+            </div>
+
+            <div class="mood-card">
+                <span class="emoji">😔</span>
+                <div>
+                    <h3>Sad</h3>
+                    <p>Need someone to listen.</p>
+                </div>
+            </div>
+
+            <div class="mood-card">
+                <span class="emoji">😰</span>
+                <div>
+                    <h3>Anxious</h3>
+                    <p>Feeling overwhelmed.</p>
+                </div>
+            </div>
+
+            <div class="mood-card">
+                <span class="emoji">😡</span>
+                <div>
+                    <h3>Angry</h3>
+                    <p>Need to calm down.</p>
+                </div>
+            </div>
+
+            <div class="mood-card">
+    <span class="emoji">😴</span>
+    <div>
+        <h3>Tired</h3>
+        <p>Need some rest.</p>
+    </div>
+</div>
+
+<div class="mood-card">
+    <span class="emoji">🥺</span>
+    <div>
+        <h3>Lonely</h3>
+        <p>Looking for support.</p>
+    </div>
+</div>
+
+</div>
+
+<button class="continue-btn">
+    Continue →
+</button>
+
+</div>
+
+</div>
+
+<!-- About Modal -->
+<div class="modal" id="aboutModal">
+
+    <div class="modal-content">
+
+        <h2>GenAI v1.0</h2>
+
+        <p>Talk Freely. Feel Heard.</p>
+
+        <br>
+
+        <p><strong>Developed By</strong></p>
+
+        <p>Vanshika Nakra</p>
+
+        <br>
+
+        <p><strong>Built With</strong></p>
+
+        <p>HTML • CSS • JavaScript • Gemini API</p>
+
+        <br>
+
+        <p>© 2026 GenAI</p>
+
+        <button onclick="closeAbout()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

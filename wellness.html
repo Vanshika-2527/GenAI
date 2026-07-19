@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wellness Hub | GenAI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#EEF5FF,#F7F3FF);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+width:390px;
+background:#fff;
+border-radius:25px;
+padding:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+h1{
+text-align:center;
+color:#5A67D8;
+margin-bottom:8px;
+}
+
+.subtitle{
+text-align:center;
+color:#666;
+font-size:15px;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.card{
+background:#F8F9FF;
+border-radius:18px;
+padding:18px;
+margin-bottom:18px;
+transition:.3s;
+box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.card h2{
+font-size:19px;
+color:#333;
+margin-bottom:8px;
+}
+
+.card p{
+color:#666;
+font-size:14px;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.open-btn{
+
+width:100%;
+padding:12px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#6C63FF,#8A7DFF);
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.open-btn:hover{
+
+transform:scale(1.02);
+
+}
+
+.home-btn{
+
+width:100%;
+padding:14px;
+margin-top:8px;
+border:none;
+border-radius:14px;
+background:#ECEBFF;
+color:#5A67D8;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+
+}
+
+.home-btn:hover{
+
+background:#DDD8FF;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌟 Wellness Hub</h1>
+
+<p class="subtitle">
+
+Discover tools designed to improve your emotional well-being.
+
+</p>
+
+<div class="card">
+
+<h2>🧠 Emotional Check-In</h2>
+
+<p>
+Take a quick quiz to understand how you're feeling today.
+</p>
+
+<button class="open-btn" onclick="openQuiz()">
+
+Open →
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🌸 Gratitude Journal</h2>
+
+<p>
+
+Write down things you're thankful for and set tomorrow's goal.
+
+</p>
+
+<button class="open-btn" onclick="openGratitude()">
+
+Open →
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Progress Dashboard</h2>
+
+<p>
+
+Track your mood journey and see your emotional progress.
+
+</p>
+
+<button class="open-btn" onclick="openProgress()">
+
+Open →
+
+</button>
+
+</div>
+
+<button class="home-btn" onclick="goHome()">
+
+🏠 Back to Home
+
+</button>
+
+<script>
+    function openQuiz(){
+
+window.location.href="quiz.html";
+
+}
+
+function openGratitude(){
+
+window.location.href="gratitude.html";
+
+}
+
+function openProgress(){
+
+window.location.href="progress.html";
+
+}
+
+function goHome(){
+
+window.location.href="index.html";
+
+}
+</script>
+
+</body>
+</html>

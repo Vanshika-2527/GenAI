@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Dashboard | GenAI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#EEF5FF,#F8F5FF);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.container{
+width:390px;
+background:#fff;
+border-radius:25px;
+padding:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+h1{
+text-align:center;
+color:#5A67D8;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#777;
+margin-bottom:25px;
+}
+
+.card{
+background:#F8F9FF;
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+font-size:16px;
+}
+
+.highlight{
+text-align:center;
+font-size:22px;
+font-weight:600;
+color:#5A67D8;
+margin-top:10px;
+}
+
+.quote{
+text-align:center;
+color:#555;
+font-style:italic;
+line-height:1.6;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#5A67D8;
+color:#fff;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#4453c5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📈 Progress Dashboard</h1>
+
+<p class="subtitle">
+Your emotional wellness at a glance 💙
+</p>
+
+<div class="card">
+
+<div class="row"><span>😊 Happy</span><span id="happy">0</span></div>
+<div class="row"><span>😔 Sad</span><span id="sad">0</span></div>
+<div class="row"><span>😟 Anxious</span><span id="anxious">0</span></div>
+<div class="row"><span>😴 Tired</span><span id="tired">0</span></div>
+<div class="row"><span>❤️ Lonely</span><span id="lonely">0</span></div>
+
+</div>
+
+<div class="card">
+
+<h3 style="text-align:center;">🌈 Most Frequent Mood</h3>
+
+<div class="highlight" id="bestMood">
+No Data
+</div>
+
+</div>
+
+<div class="card">
+
+<h3 style="text-align:center;">🏆 Gratitude Entries</h3>
+
+<div class="highlight" id="streak">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3 style="text-align:center;">💡 Today's Motivation</h3>
+
+<p class="quote" id="quote"></p>
+
+</div>
+
+<button onclick="window.location.href='index.html'">
+⬅ Back Home
+</button>
+
+</div>
+
+<script>
+
+const moodHistory =
+JSON.parse(localStorage.getItem("moodHistory")) || [];
+
+const gratitude =
+JSON.parse(localStorage.getItem("gratitudeEntries")) || [];
+
+const counts={
+Happy:0,
+Sad:0,
+Anxious:0,
+Tired:0,
+Lonely:0
+};
+
+moodHistory.forEach(item=>{
+
+let mood=(item.mood||"").toLowerCase();
+
+if(mood.includes("happy")) counts.Happy++;
+
+else if(mood.includes("sad")) counts.Sad++;
+
+else if(mood.includes("anxious")) counts.Anxious++;
+
+else if(mood.includes("tired")) counts.Tired++;
+
+else if(mood.includes("lonely")) counts.Lonely++;
+
+});
+
+document.getElementById("happy").innerText=counts.Happy;
+document.getElementById("sad").innerText=counts.Sad;
+document.getElementById("anxious").innerText=counts.Anxious;
+document.getElementById("tired").innerText=counts.Tired;
+document.getElementById("lonely").innerText=counts.Lonely;
+
+let best="No Data";
+let max=0;
+
+for(let key in counts){
+
+if(counts[key]>max){
+
+max=counts[key];
+best=key;
+
+}
+
+}
+
+document.getElementById("bestMood").innerHTML=max?best:"No Data";
+
+document.getElementById("streak").innerHTML=gratitude.length;
+
+const quotes=[
+
+"Every small step counts. 🌱",
+
+"You are stronger than yesterday. 💙",
+
+"Your feelings are valid. 🤍",
+
+"Keep going, brighter days are ahead. ☀️",
+
+"Believe in yourself every single day. ✨",
+
+"Progress is progress, no matter how small. 🌸",
+
+"You've survived 100% of your difficult days. 🌈"
+
+];
+
+document.getElementById("quote").innerHTML=
+quotes[Math.floor(Math.random()*quotes.length)];
+
+</script>
+
+</body>
+</html>

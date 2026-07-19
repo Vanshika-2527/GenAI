@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GenAI Chat</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="chat-screen">
+
+<div class="chat-header">
+
+<button class="back-btn" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+<div class="header-title">
+    <h2>GenAI</h2>
+    <small>Your Safe Space 💙</small>
+</div>
+
+<button class="menu-btn" id="menuBtn">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+</button>
+
+</div>
+
+
+<div class="menu" id="menu">
+
+<button id="aboutMenu">ℹ About</button>
+
+<button id="historyMenu">📜 Mood History</button>
+
+<button id="clearChat">🗑 Clear Chat</button>
+
+<button id="settingsMenu">⚙ Settings</button>
+
+</div>
+
+<div class="welcome-message">
+
+<h3 id="welcomeTitle">💙 Welcome</h3>
+
+<p id="welcomeText">
+
+I'm really glad you're here.
+
+You don't have to hide how you're feeling.
+
+Take your time...
+
+I'm listening. 🌸
+
+</p>
+
+</div>
+
+<div class="affirmation-card">
+    <h3>🌸 Daily Affirmation</h3>
+    <p id="affirmation"></p>
+</div>
+
+<div class="care-card" id="careCard">
+
+    <h3>🌿 Self-Care Tip</h3>
+
+    <p id="careText"></p>
+
+</div>
+
+<div class="mood-summary">
+    <h4>🌈 Today's Mood</h4>
+    <p id="todayMood">You haven't checked in today.</p>
+</div>
+
+<div class="chat-box" id="chatBox">
+
+<div class="bot-message">
+
+💙 Hi!
+
+Before anything else...
+
+Thank you for choosing to talk instead of keeping everything inside.
+
+What's on your mind today?
+
+</div>
+
+</div>
+
+<div class="quick-actions">
+
+<button id="breatheBtn">🌿 Breathe</button>
+
+<button id="calmBtn">🎵 Calm</button>
+
+<button id="quoteBtn">💡 Quote</button>
+
+</div>
+
+<button id="panicBtn" class="panic-btn">
+    🆘 Need Immediate Calm?
+</button>
+
+<div class="input-area">
+
+<input
+type="text"
+id="userInput"
+placeholder="Share what's on your mind..."
+>
+
+<button id="sendBtn">
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+
+</div>
+
+<p id="charCount">0 / 300</p>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

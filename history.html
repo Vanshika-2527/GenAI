@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood History - GenAI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="chat-header">
+
+<button class="back-btn" onclick="history.back()">
+<i class="fa-solid fa-arrow-left"></i>
+</button>
+
+<h2>Your Mood History</h2>
+
+<div class="history-container">
+
+    <h2>📜 Mood History</h2>
+
+    <div id="historyList"></div>
+
+</div>
+
+</div>
+
+<div class="history-container">
+
+<div class="history-card happy">
+<h3>😊 Happy</h3>
+<p>You felt joyful today.</p>
+<small>Today • 10:30 AM</small>
+</div>
+
+<div class="history-card sad">
+<h3>😔 Sad</h3>
+<p>You needed some emotional support.</p>
+<small>Yesterday • 8:15 PM</small>
+</div>
+
+<div class="history-card anxious">
+<h3>😰 Anxious</h3>
+<p>You practiced breathing exercises.</p>
+<small>2 Days Ago • 6:40 PM</small>
+</div>
+
+<div class="history-card tired">
+<h3>😴 Tired</h3>
+<p>You were reminded to take rest.</p>
+<small>3 Days Ago • 11:20 PM</small>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
