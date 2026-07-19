@@ -141,3 +141,10 @@ This project was developed as part of my B.Tech learning journey to enhance my w
 # 💙 Project Motto
 
 > **Talk Freely. Feel Heard.**
+
+## 🌐 Live Demo
+
+**Live Website:** https://genai-wellness.netlify.app
+
+Thank you for visiting the project! 🚀
+
