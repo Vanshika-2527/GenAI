@@ -1042,7 +1042,7 @@ let lastReply = "";
 function getRandomReply(replies) {
 
     if (!replies || replies.length === 0) {
-        return "I'm here to listen. 💙";
+        return "I'm here to listen you. 💙";
     }
 
     if (replies.length === 1) {
