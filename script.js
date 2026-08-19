@@ -2257,11 +2257,40 @@ message.includes("sleep")
 }
 
 const replies = isHindi
-? smartRepliesHindi
-: smartRepliesEnglish;
+    ? smartRepliesHindi
+    : smartRepliesEnglish;
 
-const list = replies[category] || replies.default;
-let reply = getRandomReply(list);
+const followUps = isHindi
+    ? followUpsHindi
+    : followUpsEnglish;
+
+// Get category replies
+const list = replies[category];
+
+let reply;
+
+if (list && list.length > 0) {
+    reply = getRandomReply(list);
+} else {
+    // Better default responses
+    const defaultReplies = isHindi
+        ? [
+            "Hmm... main sun raha hoon. 💙 Thoda aur batao.",
+            "Samajh raha hoon. Aaram se batao kya chal raha hai.",
+            "Main yahin hoon. Tumhare mind mein abhi kya chal raha hai? 🌸",
+            "Interesting... mujhe thoda aur batao.",
+            "Haan, bolo... main dhyan se sun raha hoon. 💙"
+        ]
+        : [
+            "I'm listening. 💙 Tell me a little more.",
+            "I understand. Take your time and tell me what's on your mind.",
+            "I'm here with you. What would you like to talk about? 🌸",
+            "Tell me a little more about that.",
+            "Go ahead... I'm listening. 💙"
+        ];
+
+    reply = getRandomReply(defaultReplies);
+}
 
 addBotMessage(reply);
 
@@ -2269,14 +2298,20 @@ addBotMessage(reply);
 // Follow-up after 2 seconds
 setTimeout(() => {
 
-    const follow =
-    followUpsEnglish[category][
-        Math.floor(Math.random() * followUpsEnglish[category].length)
-    ];
+    const followList = followUps[category];
 
-    addBotMessage(follow);
+    if (followList && followList.length > 0) {
+
+        const follow = followList[
+            Math.floor(Math.random() * followList.length)
+        ];
+
+        addBotMessage(follow);
+
+    }
 
 }, 2000);
+
 
 }, 1200);
 
